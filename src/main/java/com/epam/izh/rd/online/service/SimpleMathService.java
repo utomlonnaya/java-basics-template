@@ -1,5 +1,6 @@
 package com.epam.izh.rd.online.service;
-
+import java.util.Arrays;
+import java.util.List;
 public class SimpleMathService implements MathService {
 
     /**
@@ -13,7 +14,15 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int compare(int value1, int value2) {
-        return -2;
+
+
+        if (value1 > value2) {
+            return 1;
+        } else if (value1 == value2) {
+            return 0;
+        } else {
+            return -1;
+        }
     }
 
     /**
@@ -31,7 +40,7 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int maxFrom(int[] values) {
-        return -1;
+        return Math.max(value1, value2);
     }
 
     /**
@@ -40,7 +49,14 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int sum(int[] values) {
-        return -1;
+        int i;
+        int max = values[0];
+        for (i=1; i < values.length; i++) {
+            if (values[i] > max) {
+                max = values[i];
+            }
+        }
+        return max;
     }
 
     /**
